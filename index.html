@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elischama Prestige | Fast-food & Restaurant moderne</title>
+    <!-- Font Awesome 6 (icônes) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ---------- RESET & BASE ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #1e1e1e;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ---------- EN-TÊTE ---------- */
+        header {
+            background-color: #ffffff;
+            border-bottom: 3px solid #f97316;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.08);
+            padding: 1.2rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+
+        .logo-titre h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+
+        .logo-titre p {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: #6b7280;
+            margin-top: 0.2rem;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #1e1e1e;
+            font-size: 1rem;
+            transition: color 0.2s, border-bottom 0.2s;
+            padding-bottom: 0.3rem;
+            border-bottom: 3px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav a i {
+            color: #f97316;
+            font-size: 1rem;
+            transition: transform 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #f97316;
+            border-bottom-color: #f97316;
+        }
+
+        nav a:hover i {
+            transform: translateY(-2px);
+        }
+
+        /* ---------- HERO / PRÉSENTATION ---------- */
+        .presentation {
+            background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+            padding: 4.5rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 2px solid #fed7aa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .presentation::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .presentation-contenu {
+            max-width: 950px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge-prestige {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #ffffff;
+            color: #f97316;
+            padding: 0.5rem 1.2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15);
+            margin-bottom: 1.5rem;
+        }
+
+        .presentation h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1e1e1e;
+            margin-bottom: 1.2rem;
+            line-height: 1.15;
+        }
+
+        .presentation h2 span {
+            color: #f97316;
+            background: #ffffff;
+            padding: 0.1rem 0.8rem;
+            border-radius: 60px;
+            display: inline-block;
+            box-shadow: 0 4px 14px rgba(249, 115, 22, 0.15);
+        }
+
+        .presentation p {
+            font-size: 1.2rem;
+            color: #4b5563;
+            max-width: 720px;
+            margin: 0 auto 2rem;
+            font-weight: 400;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.9rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: #f97316;
+            color: #ffffff;
+            box-shadow: 0 8px 20px -6px rgba(249, 115, 22, 0.5);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 28px -8px rgba(249, 115, 22, 0.6);
+        }
+
+        .btn-outline {
+            background: #ffffff;
+            color: #f97316;
+            border: 2px solid #f97316;
+        }
+
+        .btn-outline:hover {
+            background: #f97316;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 28px -8px rgba(249, 115, 22, 0.4);
+        }
+
+        /* ---------- STATS ---------- */
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 3rem auto 0;
+            padding: 0 2rem;
+        }
+
+        .stat-item {
+            flex: 1 1 180px;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px -10px rgba(249, 115, 22, 0.15);
+            border: 1px solid #fed7aa;
+        }
+
+        .stat-item i {
+            font-size: 2rem;
+            color: #f97316;
+            margin-bottom: 0.6rem;
+        }
+
+        .stat-item .chiffre {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1e1e1e;
+            line-height: 1;
+        }
+
+        .stat-item .label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #6b7280;
+            font-weight: 600;
+            margin-top: 0.4rem;
+        }
+
+        /* ---------- CARTES (3) ---------- */
+        .cartes-section {
+            padding: 5rem 2rem;
+            background: #ffffff;
+        }
+
+        .section-titre {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-titre .surtitre {
+            display: inline-block;
+            color: #f97316;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+
+        .section-titre h2 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #1f2937;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.8rem;
+        }
+
+        .section-titre h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 5px;
+            background: #f97316;
+            border-radius: 4px;
+        }
+
+        .cartes-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .carte {
+            background-color: #ffffff;
+            border-radius: 32px;
+            padding: 2.4rem 2rem;
+            flex: 1 1 300px;
+            max-width: 380px;
+            box-shadow: 0 15px 30px -10px rgba(249, 115, 22, 0.15), 0 0 0 1px rgba(249, 115, 22, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 6px solid #f97316;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .carte:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 50px -15px rgba(249, 115, 22, 0.3), 0 0 0 2px #f97316;
+        }
+
+        .carte-icone {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+            border: 2px solid #fed7aa;
+        }
+
+        .carte:hover .carte-icone {
+            transform: rotate(-6deg) scale(1.08);
+        }
+
+        .carte-icone i {
+            font-size: 2rem;
+            color: #f97316;
+        }
+
+        .carte h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1e1e1e;
+            margin-bottom: 0.8rem;
+        }
+
+        .carte p {
+            color: #4b5563;
+            font-size: 1.02rem;
+            line-height: 1.65;
+            flex-grow: 1;
+        }
+
+        .carte .carte-lien {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #f97316;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            transition: gap 0.2s ease;
+        }
+
+        .carte .carte-lien:hover {
+            gap: 0.9rem;
+        }
+
+        /* ---------- GALERIE D'IMAGES ---------- */
+        .galerie-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(180deg, #fff7ed 0%, #ffffff 100%);
+            border-top: 2px solid #fed7aa;
+        }
+
+        .galerie-filtres {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .filtre-btn {
+            background: #ffffff;
+            border: 2px solid #fed7aa;
+            color: #4b5563;
+            padding: 0.6rem 1.4rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .filtre-btn i {
+            color: #f97316;
+        }
+
+        .filtre-btn:hover,
+        .filtre-btn.actif {
+            background: #f97316;
+            color: #ffffff;
+            border-color: #f97316;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px -6px rgba(249, 115, 22, 0.5);
+        }
+
+        .filtre-btn:hover i,
+        .filtre-btn.actif i {
+            color: #ffffff;
+        }
+
+        .galerie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .galerie-item {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 25px -10px rgba(249, 115, 22, 0.25), 0 0 0 1px rgba(249, 115, 22, 0.1);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            aspect-ratio: 4 / 3;
+            background: #ffffff;
+            cursor: pointer;
+        }
+
+        .galerie-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 30px 50px -15px rgba(249, 115, 22, 0.4), 0 0 0 3px #f97316;
+        }
+
+        .galerie-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .galerie-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .galerie-item .legende {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 70%, transparent 100%);
+            color: #ffffff;
+            padding: 1.4rem 1.2rem 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.3px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            border-top: 3px solid #f97316;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .galerie-item .legende i {
+            color: #f97316;
+            font-size: 1rem;
+            background: #ffffff;
+            padding: 0.4rem;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+        }
+
+        .galerie-item:hover .legende {
+            transform: translateY(-4px);
+        }
+
+        .galerie-item .tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #f97316;
+            color: #ffffff;
+            padding: 0.35rem 0.9rem;
+            border-radius: 60px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ---------- TÉMOIGNAGES ---------- */
+        .temoignages-section {
+            padding: 5rem 2rem;
+            background: #ffffff;
+        }
+
+        .temoignages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .temoignage {
+            background: #fff7ed;
+            border-radius: 24px;
+            padding: 2rem;
+            border-left: 6px solid #f97316;
+            position: relative;
+        }
+
+        .temoignage .guillemet {
+            font-size: 4rem;
+            color: #f97316;
+            opacity: 0.2;
+            line-height: 0;
+            position: absolute;
+            top: 1.8rem;
+            right: 1.5rem;
+            font-family: Georgia, serif;
+        }
+
+        .temoignage .etoiles {
+            color: #f97316;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .temoignage p {
+            color: #4b5563;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+            font-style: italic;
+        }
+
+        .temoignage .auteur {
+            font-weight: 700;
+            color: #1e1e1e;
+            font-size: 0.95rem;
+        }
+
+        .temoignage .role {
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+
+        /* ---------- CTA / BANNIÈRE ---------- */
+        .cta-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .cta-section h2 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-section .btn {
+            background: #ffffff;
+            color: #f97316;
+        }
+
+        .cta-section .btn:hover {
+            background: #fff7ed;
+        }
+
+        /* ---------- PIED DE PAGE ---------- */
+        footer {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            padding: 4rem 2rem 2rem;
+            border-top: 6px solid #f97316;
+        }
+
+        .footer-contenu {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .footer-col h4 i {
+            color: #f97316;
+            font-size: 1.5rem;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            color: #d1d5db;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            text-decoration: none;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            margin-bottom: 0.6rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-col a:hover {
+            color: #f97316;
+        }
+
+        .footer-col i {
+            color: #f97316;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .footer-social a {
+            width: 42px;
+            height: 42px;
+            background: rgba(249, 115, 22, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f97316;
+            transition: all 0.25s ease;
+            font-size: 1.1rem;
+        }
+
+        .footer-social a:hover {
+            background: #f97316;
+            color: #ffffff;
+            transform: translateY(-4px);
+        }
+
+        .footer-bas {
+            max-width: 1300px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        .footer-bas i {
+            color: #f97316;
+        }
+
+        /* ---------- BOUTON RETOUR HAUT ---------- */
+        .retour-haut {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 52px;
+            height: 52px;
+            background: #f97316;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            text-decoration: none;
+            box-shadow: 0 8px 20px -6px rgba(249, 115, 22, 0.6);
+            transition: transform 0.25s ease, background 0.25s ease;
+            z-index: 999;
+        }
+
+        .retour-haut:hover {
+            background: #ea580c;
+            transform: translateY(-4px) scale(1.05);
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 992px) {
+            .presentation h2 {
+                font-size: 2.4rem;
+            }
+
+            .section-titre h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 0.8rem;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .presentation {
+                padding: 3rem 1.2rem;
+            }
+
+            .presentation h2 {
+                font-size: 1.9rem;
+            }
+
+            .presentation p {
+                font-size: 1rem;
+            }
+
+            .stats {
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+
+            .stat-item {
+                flex: 1 1 45%;
+                padding: 1.2rem 0.8rem;
+            }
+
+            .stat-item .chiffre {
+                font-size: 1.6rem;
+            }
+
+            .cartes-section,
+            .galerie-section,
+            .temoignages-section {
+                padding: 3rem 1.2rem;
+            }
+
+            .galerie-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 1.2rem;
+            }
+
+            .galerie-item .legende {
+                font-size: 1rem;
+                padding: 1rem 0.8rem 0.8rem;
+            }
+
+            .galerie-item .legende i {
+                width: 1.7rem;
+                height: 1.7rem;
+                font-size: 0.9rem;
+            }
+
+            .footer-contenu {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .footer-col h4,
+            .footer-col p,
+            .footer-col a {
+                justify-content: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-bas {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .retour-haut {
+                bottom: 1.2rem;
+                right: 1.2rem;
+                width: 46px;
+                height: 46px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .galerie-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .presentation h2 {
+                font-size: 1.6rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                justify-content: center;
+            }
+
+            .stat-item {
+                flex: 1 1 100%;
+            }
+
+            .galerie-filtres {
+                gap: 0.5rem;
+            }
+
+            .filtre-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête avec titre et menu -->
+    <header>
+        <div class="logo-titre">
+            <h1>Elischama Prestige</h1>
+            <p>Fast-food & Restaurant moderne</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#accueil"><i class="fa-solid fa-house"></i>Accueil</a></li>
+                <li><a href="#menu"><i class="fa-solid fa-book-open"></i>Menu</a></li>
+                <li><a href="#galerie"><i class="fa-solid fa-camera"></i>Galerie</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-calendar-check"></i>Réservation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section de présentation (Hero) -->
+    <section class="presentation" id="accueil">
+        <div class="presentation-contenu">
+            <span class="badge-prestige"><i class="fa-solid fa-award"></i> Excellence culinaire depuis 2020</span>
+            <h2>L'expérience <span>gourmande</span> réinventée</h2>
+            <p>Elischama Prestige fusionne la rapidité du fast-food et l'élégance d'un restaurant moderne. Des recettes audacieuses, des produits frais et un service éclair au cœur de Banfora.</p>
+            <div class="hero-actions">
+                <a href="#menu" class="btn btn-primary"><i class="fa-solid fa-utensils"></i> Découvrir le menu</a>
+                <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Réserver une table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistiques -->
+    <div class="stats">
+        <div class="stat-item">
+            <i class="fa-solid fa-burger"></i>
+            <div class="chiffre">50+</div>
+            <div class="label">Plats signature</div>
+        </div>
+        <div class="stat-item">
+            <i class="fa-solid fa-users"></i>
+            <div class="chiffre">15K+</div>
+            <div class="label">Clients satisfaits</div>
+        </div>
+        <div class="stat-item">
+            <i class="fa-solid fa-clock"></i>
+            <div class="chiffre">10 min</div>
+            <div class="label">Service express</div>
+        </div>
+        <div class="stat-item">
+            <i class="fa-solid fa-star"></i>
+            <div class="chiffre">4.9/5</div>
+            <div class="label">Note moyenne</div>
+        </div>
+    </div>
+
+    <!-- 3 cartes avec titre et texte -->
+    <section class="cartes-section" id="menu">
+        <div class="section-titre">
+            <span class="surtitre">Nos engagements</span>
+            <h2>Pourquoi nous choisir ?</h2>
+        </div>
+        <div class="cartes-grid">
+            <article class="carte">
+                <div class="carte-icone">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <h3>Rapidité Prestige</h3>
+                <p>Commandez et savourez en moins de 10 minutes. Notre système de cuisine intelligente allie vitesse et qualité exceptionnelle, sans compromis sur le goût.</p>
+                <a href="#" class="carte-lien">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+            <article class="carte">
+                <div class="carte-icone">
+                    <i class="fa-solid fa-pizza-slice"></i>
+                </div>
+                <h3>Saveurs Modernes</h3>
+                <p>Des burgers signature, des bowls colorés et des recettes créatives qui revisitent les classiques. Chaque plat est une œuvre d'art culinaire.</p>
+                <a href="#" class="carte-lien">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+            <article class="carte">
+                <div class="carte-icone">
+                    <i class="fa-solid fa-couch"></i>
+                </div>
+                <h3>Ambiance Élégante</h3>
+                <p>Un cadre design, chaleureux et branché. Parfait pour un déjeuner rapide, un dîner décontracté ou une pause gourmande entre amis.</p>
+                <a href="#" class="carte-lien">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Galerie d'images -->
+    <section class="galerie-section" id="galerie">
+        <div class="section-titre">
+            <span class="surtitre">Découvrez nos plats</span>
+            <h2>Notre galerie gourmande</h2>
+        </div>
+
+        <div class="galerie-filtres">
+            <button class="filtre-btn actif" data-filtre="tout"><i class="fa-solid fa-border-all"></i> Tout</button>
+            <button class="filtre-btn" data-filtre="africain"><i class="fa-solid fa-globe"></i> Spécialités africaines</button>
+            <button class="filtre-btn" data-filtre="fastfood"><i class="fa-solid fa-burger"></i> Fast-food</button>
+            <button class="filtre-btn" data-filtre="ambiance"><i class="fa-solid fa-store"></i> Ambiance</button>
+        </div>
+
+        <div class="galerie-grid" id="galerieGrid">
+            <!-- Spécialités africaines -->
+            <div class="galerie-item" data-categorie="africain">
+                <span class="tag">Afrique</span>
+                <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=800&h=600&fit=crop" alt="Riz gras africain">
+                <span class="legende"><i class="fa-solid fa-bowl-rice"></i> Riz Gras Signature</span>
+            </div>
+            <div class="galerie-item" data-categorie="africain">
+                <span class="tag">Afrique</span>
+                <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=800&h=600&fit=crop" alt="Poulet braisé épicé">
+                <span class="legende"><i class="fa-solid fa-drumstick-bite"></i> Poulet Braisé Épicé</span>
+            </div>
+            <div class="galerie-item" data-categorie="africain">
+                <span class="tag">Afrique</span>
+                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&h=600&fit=crop" alt="Attiéké poisson grillé">
+                <span class="legende"><i class="fa-solid fa-fish"></i> Attiéké Poisson</span>
+            </div>
+            <div class="galerie-item" data-categorie="africain">
+                <span class="tag">Afrique</span>
+                <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=800&h=600&fit=crop" alt="Sauce arachide et riz">
+                <span class="legende"><i class="fa-solid fa-utensils"></i> Sauce Arachide</span>
+            </div>
+
+            <!-- Fast-food -->
+            <div class="galerie-item" data-categorie="fastfood">
+                <span class="tag">Fast-food</span>
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&h=600&fit=crop" alt="Burger signature Elischama Prestige">
+                <span class="legende"><i class="fa-solid fa-burger"></i> Burger Signature</span>
+            </div>
+            <div class="galerie-item" data-categorie="fastfood">
+                <span class="tag">Fast-food</span>
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&h=600&fit=crop" alt="Frites croustillantes et sauces maison">
+                <span class="legende"><i class="fa-solid fa-bowl-food"></i> Frites & Sauces</span>
+            </div>
+
+            <!-- Ambiance -->
+            <div class="galerie-item" data-categorie="ambiance">
+                <span class="tag">Ambiance</span>
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop" alt="Salle du restaurant moderne">
+                <span class="legende"><i class="fa-solid fa-store"></i> Notre Espace</span>
+            </div>
+            <div class="galerie-item" data-categorie="ambiance">
+                <span class="tag">Ambiance</span>
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&h=600&fit=crop" alt="Ambiance chaleureuse du restaurant">
+                <span class="legende"><i class="fa-solid fa-wine-glass"></i> Ambiance Chaleureuse</span>
+            </div>
+
+            <!-- Plats modernes -->
+            <div class="galerie-item" data-categorie="fastfood">
+                <span class="tag">Moderne</span>
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&h=600&fit=crop" alt="Bol coloré et healthy">
+                <span class="legende"><i class="fa-solid fa-leaf"></i> Bol Vitaminé</span>
+            </div>
+            <div class="galerie-item" data-categorie="fastfood">
+                <span class="tag">Moderne</span>
+                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&h=600&fit=crop" alt="Dessert gourmand">
+                <span class="legende"><i class="fa-solid fa-ice-cream"></i> Dessert Maison</span>
+            </div>
+            <div class="galerie-item" data-categorie="africain">
+                <span class="tag">Afrique</span>
+                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&h=600&fit=crop" alt="Brochettes épicées grillées">
+                <span class="legende"><i class="fa-solid fa-fire"></i> Brochettes Grillées</span>
+            </div>
+            <div class="galerie-item" data-categorie="africain">
+                <span class="tag">Afrique</span>
+                <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=800&h=600&fit=crop" alt="Mafé de bœuf traditionnel">
+                <span class="legende"><i class="fa-solid fa-pot-food"></i> Mafé Traditionnel</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages -->
+    <section class="temoignages-section">
+        <div class="section-titre">
+            <span class="surtitre">Avis clients</span>
+            <h2>Ils nous font confiance</h2>
+        </div>
+        <div class="temoignages-grid">
+            <div class="temoignage">
+                <span class="guillemet">"</span>
+                <div class="etoiles">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>Un mélange parfait entre tradition africaine et modernité. Le riz gras est à tomber, et le service est ultra rapide. Une adresse incontournable à Banfora !</p>
+                <div class="auteur">Aminata K.</div>
+                <div class="role">Cliente fidèle</div>
+            </div>
+            <div class="temoignage">
+                <span class="guillemet">"</span>
+                <div class="etoiles">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p>L'ambiance est chaleureuse et le cadre très soigné. J'ai adoré le burger signature et les brochettes grillées. Parfait pour un dîner entre amis.</p>
+                <div class="auteur">Ibrahim S.</div>
+                <div class="role">Client satisfait</div>
+            </div>
+            <div class="temoignage">
+                <span class="guillemet">"</span>
+                <div class="etoiles">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p>Elischama Prestige a révolutionné le fast-food local. Des saveurs authentiques, des portions généreuses et un accueil toujours souriant. Bravo !</p>
+                <div class="auteur">Fatou D.</div>
+                <div class="role">Food blogueuse</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Bannière -->
+    <section class="cta-section">
+        <h2><i class="fa-solid fa-utensils"></i> Prêt à vivre l'expérience Elischama ?</h2>
+        <p>Réservez votre table dès maintenant ou commandez en livraison express. Le goût de l'excellence vous attend.</p>
+        <a href="#contact" class="btn"><i class="fa-solid fa-phone"></i> Nous contacter</a>
+    </section>
+
+    <!-- Pied de page avec contact -->
+    <footer id="contact">
+        <div class="footer-contenu">
+            <div class="footer-col">
+                <h4><i class="fa-solid fa-utensils"></i> Elischama Prestige</h4>
+                <p>Fast-food & Restaurant moderne au cœur de Banfora. Une cuisine généreuse, rapide et élégante qui marie tradition africaine et saveurs du monde.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fa-solid fa-link"></i> Navigation</h4>
+                <a href="#accueil"><i class="fa-solid fa-chevron-right"></i> Accueil</a>
+                <a href="#menu"><i class="fa-solid fa-chevron-right"></i> Menu</a>
+                <a href="#galerie"><i class="fa-solid fa-chevron-right"></i> Galerie</a>
+                <a href="#contact"><i class="fa-solid fa-chevron-right"></i> Réservation</a>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fa-solid fa-address-book"></i> Contact</h4>
+                <p><i class="fa-solid fa-phone"></i>whatsap 55315201</p>
+                <p><i class="fa-solid fa-envelope"></i> contact@elischama-prestige.fr</p>
+                <p><i class="fa-solid fa-location-dot"></i> Banfora secteur 09, Burkina Faso</p>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fa-solid fa-clock"></i> Horaires</h4>
+                <p><i class="fa-solid fa-sun"></i> Lun - Ven : 10h - 23h</p>
+                <p><i class="fa-solid fa-calendar-day"></i> Sam - Dim : 09h - 00h</p>
+                <p><i class="fa-solid fa-truck-fast"></i> Livraison express 7j/7</p>
+            </div>
+        </div>
+        <div class="footer-bas">
+            <p><i class="fa-regular fa-copyright"></i> 2026 Elischama Prestige — Tous droits réservés.</p>
+            <p>Conçu avec <i class="fa-solid fa-heart"></i> pour les amoureux de la bonne cuisine.</p>
+        </div>
+    </footer>
+
+    <!-- Bouton retour en haut -->
+    <a href="#accueil" class="retour-haut" aria-label="Retour en haut"><i class="fa-solid fa-arrow-up"></i></a>
+
+    <!-- Script pour les filtres de galerie -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filtres = document.querySelectorAll('.filtre-btn');
+            const items = document.querySelectorAll('.galerie-item');
+
+            filtres.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    // Retirer la classe active de tous les boutons
+                    filtres.forEach(function(b) {
+                        b.classList.remove('actif');
+                    });
+                    // Ajouter la classe active au bouton cliqué
+                    this.classList.add('actif');
+
+                    const filtre = this.getAttribute('data-filtre');
+
+                    items.forEach(function(item) {
+                        const categorie = item.getAttribute('data-categorie');
+                        if (filtre === 'tout' || categorie === filtre) {
+                            item.style.display = 'block';
+                            // Petite animation
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.95)';
+                            setTimeout(function() {
+                                item.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 50);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.95)';
+                            setTimeout(function() {
+                                item.style.display = 'none';
+                            }, 200);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
